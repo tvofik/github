@@ -14,6 +14,9 @@ jobs:
           DEFAULT_BRANCH: mainu
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Try to fail
+        run: exit 1
+
       - name: Slack Notifications
         uses: rtCamp/action-slack-notify@v2
         if: failure() || cancelled()
