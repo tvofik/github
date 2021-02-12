@@ -1,0 +1,12 @@
+on: push
+name: Checkout Branch
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Try to Fail
+        run: exit 1
